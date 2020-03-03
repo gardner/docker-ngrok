@@ -18,3 +18,5 @@ jobs:
         echo "$DOCKER_PASSWORD" | docker login --username gardner --password-stdin
         docker build . --file Dockerfile --tag gardner/ngrok:latest
         docker push gardner/ngrok
+      env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
